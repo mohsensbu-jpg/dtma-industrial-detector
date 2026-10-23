@@ -1,0 +1,49 @@
+==== PQ_adaptive_threshold  (22-Oct-2026 19:08:57) ====
+
+resistive 330 W
+  rot 1: FA/s on unseen test, budget 0.10 | static/mean 0.121 | rolling/mean 0.072 | rollRare/mean 0.072 | static/q99 0.096 | rolling/q99 0.048 | rollRare/q99 0.048
+  rot 2: FA/s on unseen test, budget 0.10 | static/mean 0.000 | rolling/mean 0.048 | rollRare/mean 0.048 | static/q99 0.000 | rolling/q99 0.000 | rollRare/q99 0.000
+  rot 3: FA/s on unseen test, budget 0.10 | static/mean 0.411 | rolling/mean 0.072 | rollRare/mean 0.072 | static/q99 0.145 | rolling/q99 0.048 | rollRare/q99 0.048
+  rot 4: FA/s on unseen test, budget 0.10 | static/mean 0.000 | rolling/mean 0.024 | rollRare/mean 0.024 | static/q99 0.024 | rolling/q99 0.048 | rollRare/q99 0.048
+
+induction motor
+  rot 1: FA/s on unseen test, budget 0.10 | static/mean 0.000 | rolling/mean 0.240 | rollRare/mean 0.240 | static/q99 0.072 | rolling/q99 0.168 | rollRare/q99 0.168
+  rot 2: FA/s on unseen test, budget 0.10 | static/mean 0.307 | rolling/mean 0.118 | rollRare/mean 0.118 | static/q99 0.094 | rolling/q99 0.212 | rollRare/q99 0.212
+  rot 3: FA/s on unseen test, budget 0.10 | static/mean 0.024 | rolling/mean 0.146 | rollRare/mean 0.146 | static/q99 0.073 | rolling/q99 0.097 | rollRare/q99 0.097
+  rot 4: FA/s on unseen test, budget 0.10 | static/mean 0.000 | rolling/mean 0.219 | rollRare/mean 0.219 | static/q99 0.049 | rolling/q99 0.171 | rollRare/q99 0.171
+
+ceiling fan 50 W
+  rot 1: FA/s on unseen test, budget 0.10 | static/mean 0.000 | rolling/mean 0.000 | rollRare/mean 0.000 | static/q99 0.143 | rolling/q99 0.119 | rollRare/q99 0.119
+  rot 2: FA/s on unseen test, budget 0.10 | static/mean 0.000 | rolling/mean 0.000 | rollRare/mean 0.000 | static/q99 0.098 | rolling/q99 0.123 | rollRare/q99 0.123
+  rot 3: FA/s on unseen test, budget 0.10 | static/mean 0.000 | rolling/mean 0.000 | rollRare/mean 0.000 | static/q99 0.000 | rolling/q99 0.147 | rollRare/q99 0.147
+  rot 4: FA/s on unseen test, budget 0.10 | static/mean 0.000 | rolling/mean 0.000 | rollRare/mean 0.000 | static/q99 0.171 | rolling/q99 0.024 | rollRare/q99 0.024
+
+SMPS charger
+  rot 1: FA/s on unseen test, budget 0.10 | static/mean 0.071 | rolling/mean 0.095 | rollRare/mean 0.095 | static/q99 0.095 | rolling/q99 0.143 | rollRare/q99 0.143
+  rot 2: FA/s on unseen test, budget 0.10 | static/mean 0.000 | rolling/mean 0.000 | rollRare/mean 0.000 | static/q99 0.047 | rolling/q99 0.071 | rollRare/q99 0.071
+  rot 3: FA/s on unseen test, budget 0.10 | static/mean 0.024 | rolling/mean 0.071 | rollRare/mean 0.071 | static/q99 0.024 | rolling/q99 0.095 | rollRare/q99 0.095
+  rot 4: FA/s on unseen test, budget 0.10 | static/mean 0.072 | rolling/mean 0.096 | rollRare/mean 0.096 | static/q99 0.096 | rolling/q99 0.120 | rollRare/q99 0.120
+
+#####################################################################
+SUMMARY: 16 calibration/test pairs, 11.1 min of unseen test data
+
+Budget 0.10 false alarms/s (= 360 per hour)
+  method        pooled FA/s   (per hour)  worst pair  pairs>2x | Se 0.5  0.3  0.2  p.u.
+  static/mean       0.065      (  233)      0.411     2/16  | 0.993 0.815 0.416
+  rolling/mean      0.075      (  271)      0.240     2/16  | 0.999 0.586 0.155
+  rollRare/mean     0.075      (  271)      0.240     2/16  | 0.998 0.841 0.439
+  static/q99        0.077      (  276)      0.171     0/16  | 0.997 0.910 0.592
+  rolling/q99       0.102      (  369)      0.212     1/16  | 0.999 0.911 0.282
+  rollRare/q99      0.102      (  369)      0.212     1/16  | 0.999 0.933 0.631
+
+Budget 0.03 false alarms/s (= 108 per hour)
+  method        pooled FA/s   (per hour)  worst pair  pairs>2x | Se 0.5  0.3  0.2  p.u.
+  static/mean       0.012      (   43)      0.097     2/16  | 0.916 0.583 0.214
+  rolling/mean      0.012      (   43)      0.048     0/16  | 0.743 0.226 0.036
+  rollRare/mean     0.012      (   43)      0.048     0/16  | 0.945 0.593 0.199
+  static/q99        0.014      (   49)      0.096     1/16  | 0.988 0.778 0.352
+  rolling/q99       0.029      (  103)      0.072     2/16  | 0.992 0.281 0.034
+  rollRare/q99      0.029      (  103)      0.072     2/16  | 0.988 0.796 0.387
+
+Total run time: 20.5 s
+==== END ====

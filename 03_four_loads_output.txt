@@ -1,0 +1,85 @@
+==== PQ_TMA_step2b  (21-Oct-2026 19:35:29) ====
+
+#####################################################################
+FILE 1: resistive 330 W  (V_I_Waveforms_330W_Resistive_Load.csv)
+fs=10000 Hz  N=599999 (60.0 s)  f0=49.954 Hz  recorder gaps=278  masked=8.20 %
+intrinsic noise RMS = 0.0207 p.u. -> intrinsic SNR (A0=0.20) = 19.7 dB
+calibration (first 15 s, target <= 0.10 FA/s): main k = 7.50 (default 3.90, FA/s 0.073) | db4 k = 7.00 (default 4.60, FA/s 0.073)
+Part 1  false alarms/s on real voltage (test part, 41.5 s clean):
+  main=13.97  ECG=211.90  global=13.97  db4=3.81  cycle=12.21  mainCAL=0.43  db4CAL=0.24  
+Part 2  F1; marks vs mainCAL: + mainCAL significantly better, - worse, = n.s.
+  SNR 24: not reachable (intrinsic noise already higher)
+  SNR 18 | main 0.714+ ECG 0.167+ global 0.716+ db4 0.826- cycle 0.496+ mainCAL 0.803 (Se 0.68 PPV 0.98) db4CAL 0.592+
+  SNR 12 | main 0.575- ECG 0.152= global 0.565- db4 0.357- cycle 0.278= mainCAL 0.292 (Se 0.19 PPV 0.68) db4CAL 0.185+
+  SNR  6 | main 0.233- ECG 0.114- global 0.225- db4 0.049= cycle 0.068- mainCAL 0.043 (Se 0.03 PPV 0.11) db4CAL 0.005+
+  SNR  0 | main 0.098- ECG 0.073- global 0.091- db4 0.013- cycle 0.029- mainCAL 0.006 (Se 0.00 PPV 0.01) db4CAL 0.000=
+
+#####################################################################
+FILE 2: induction motor  (V_I_Waveforms_0.5HP_Induction_Motor_No_Load.csv)
+fs=10000 Hz  N=600000 (60.0 s)  f0=49.941 Hz  recorder gaps=175  masked=7.51 %
+intrinsic noise RMS = 0.0152 p.u. -> intrinsic SNR (A0=0.20) = 22.4 dB
+calibration (first 15 s, target <= 0.10 FA/s): main k = 8.25 (default 3.90, FA/s 0.073) | db4 k = 7.50 (default 4.60, FA/s 0.073)
+Part 1  false alarms/s on real voltage (test part, 41.8 s clean):
+  main=11.89  ECG=220.85  global=11.77  db4=3.40  cycle=8.28  mainCAL=0.02  db4CAL=0.07  
+Part 2  F1; marks vs mainCAL: + mainCAL significantly better, - worse, = n.s.
+  SNR 24: not reachable (intrinsic noise already higher)
+  SNR 18 | main 0.756- ECG 0.157+ global 0.752- db4 0.774- cycle 0.516+ mainCAL 0.640 (Se 0.47 PPV 0.99) db4CAL 0.341+
+  SNR 12 | main 0.589- ECG 0.139= global 0.570- db4 0.191- cycle 0.229- mainCAL 0.084 (Se 0.05 PPV 0.52) db4CAL 0.009+
+  SNR  6 | main 0.216- ECG 0.109- global 0.199- db4 0.020- cycle 0.049- mainCAL 0.002 (Se 0.00 PPV 0.01) db4CAL 0.000=
+  SNR  0 | main 0.036- ECG 0.064- global 0.037- db4 0.009= cycle 0.026- mainCAL 0.005 (Se 0.00 PPV 0.03) db4CAL 0.000=
+
+#####################################################################
+FILE 3: ceiling fan 50 W  (V_I_Waveforms_50W_Ceiling_Fan_Aged.csv)
+downloading (~30 MB) ...
+fs=10000 Hz  N=599999 (60.0 s)  f0=49.924 Hz  recorder gaps=189  masked=8.69 %
+intrinsic noise RMS = 0.0265 p.u. -> intrinsic SNR (A0=0.20) = 17.6 dB
+calibration (first 15 s, target <= 0.10 FA/s): main k = 9.50 (default 3.90, FA/s 0.078) | db4 k = 8.50 (default 4.60, FA/s 0.078)
+Part 1  false alarms/s on real voltage (test part, 42.0 s clean):
+  main=12.85  ECG=216.43  global=13.54  db4=3.69  cycle=11.20  mainCAL=0.05  db4CAL=0.02  
+Part 2  F1; marks vs mainCAL: + mainCAL significantly better, - worse, = n.s.
+  SNR 24: not reachable (intrinsic noise already higher)
+  SNR 18: not reachable (intrinsic noise already higher)
+  SNR 12 | main 0.535- ECG 0.150- global 0.510- db4 0.086- cycle 0.224- mainCAL 0.019 (Se 0.01 PPV 0.11) db4CAL 0.000+
+  SNR  6 | main 0.182- ECG 0.117- global 0.166- db4 0.010= cycle 0.033- mainCAL 0.007 (Se 0.00 PPV 0.02) db4CAL 0.000+
+  SNR  0 | main 0.031- ECG 0.062- global 0.031- db4 0.009= cycle 0.018- mainCAL 0.001 (Se 0.00 PPV 0.00) db4CAL 0.000=
+
+#####################################################################
+FILE 4: SMPS charger  (V_I_Waveforms_SMPS_Mobile_Charger.csv)
+downloading (~30 MB) ...
+fs=10000 Hz  N=599999 (60.0 s)  f0=49.855 Hz  recorder gaps=152  masked=6.90 %
+intrinsic noise RMS = 0.0210 p.u. -> intrinsic SNR (A0=0.20) = 19.6 dB
+calibration (first 15 s, target <= 0.10 FA/s): main k = 9.00 (default 3.90, FA/s 0.000) | db4 k = 8.50 (default 4.60, FA/s 0.000)
+Part 1  false alarms/s on real voltage (test part, 42.0 s clean):
+  main=12.08  ECG=211.24  global=12.13  db4=4.91  cycle=6.48  mainCAL=0.21  db4CAL=0.07  
+Part 2  F1; marks vs mainCAL: + mainCAL significantly better, - worse, = n.s.
+  SNR 24: not reachable (intrinsic noise already higher)
+  SNR 18 | main 0.703- ECG 0.183+ global 0.698= db4 0.834- cycle 0.514+ mainCAL 0.658 (Se 0.49 PPV 0.98) db4CAL 0.431+
+  SNR 12 | main 0.535- ECG 0.150= global 0.518- db4 0.286- cycle 0.237- mainCAL 0.116 (Se 0.07 PPV 0.47) db4CAL 0.076+
+  SNR  6 | main 0.216- ECG 0.120- global 0.203- db4 0.068= cycle 0.063- mainCAL 0.030 (Se 0.02 PPV 0.08) db4CAL 0.005+
+  SNR  0 | main 0.057- ECG 0.066- global 0.051- db4 0.012= cycle 0.036- mainCAL 0.011 (Se 0.01 PPV 0.03) db4CAL 0.000+
+
+#####################################################################
+SUMMARY
+calibrated k:  resistive 330 W: main 7.50, db4 7.00;  induction motor: main 8.25, db4 7.50;  ceiling fan 50 W: main 9.50, db4 8.50;  SMPS charger: main 9.00, db4 8.50;  
+
+file               SNRi | false alarms/s on real voltage (test part)
+                        |    main     ECG  global     db4   cycle mainCAL  db4CAL
+resistive 330 W    19.7 |   13.97  211.90   13.97    3.81   12.21    0.43    0.24
+induction motor    22.4 |   11.89  220.85   11.77    3.40    8.28    0.02    0.07
+ceiling fan 50 W   17.6 |   12.85  216.43   13.54    3.69   11.20    0.05    0.02
+SMPS charger       19.6 |   12.08  211.24   12.13    4.91    6.48    0.21    0.07
+
+file                    | F1 at total SNR 18 dB
+resistive 330 W         |   0.714   0.167   0.716   0.826   0.496   0.803   0.592
+induction motor         |   0.756   0.157   0.752   0.774   0.516   0.640   0.341
+ceiling fan 50 W        |     NaN     NaN     NaN     NaN     NaN     NaN     NaN
+SMPS charger            |   0.703   0.183   0.698   0.834   0.514   0.658   0.431
+
+file                    | F1 at total SNR 12 dB
+resistive 330 W         |   0.575   0.152   0.565   0.357   0.278   0.292   0.185
+induction motor         |   0.589   0.139   0.570   0.191   0.229   0.084   0.009
+ceiling fan 50 W        |   0.535   0.150   0.510   0.086   0.224   0.019   0.000
+SMPS charger            |   0.535   0.150   0.518   0.286   0.237   0.116   0.076
+
+Total run time: 31.7 s
+==== END ====

@@ -1,0 +1,180 @@
+==== PQ_TMA_step1  (21-Oct-2026 19:06:03) ====
+Downloading V_I_Waveforms_330W_Resistive_Load.csv (~30 MB) ...
+Download OK.
+
+File: V_I_Waveforms_330W_Resistive_Load.csv   rows = 600000
+Columns: time_s | adc_current | adc_voltage | current_A | voltage_V | instant_power_W
+First rows:
+     time_s     adc_current    adc_voltage    current_A    voltage_V    instant_power_W
+    ________    ___________    ___________    _________    _________    _______________
+
+       1e-06        458            593         -1.9415       -268.4         521.09     
+    0.000901        451            582         -2.1791      -284.51         619.97     
+    0.001013        452            567         -2.1452      -306.48         657.44     
+
+Voltage column: "adc_voltage"   time column: "time_s"
+fs = 10000.0 Hz   N = 600000 (60.0 s)   f0 = 49.954 Hz   Vpeak = 216.39 (raw units)
+Real residual noise (aperiodic part): RMS = 0.08692 p.u.  -> intrinsic SNR for A0=0.20: 7.2 dB
+
+=====================================================================
+EXP A1: REAL grid voltage + REAL noise (as recorded), fs=10000 Hz
+transient: double-exp tau1=100 us tau2=400 us, amp 0.20 p.u. x U(0.6,1.4), random sign
+W=5 smp (0.50 ms)  w1=17  w2=3  L=2002 (10 cycles)  Tmin=20  tol=+-5 smp (0.50 ms)
+local rule: thr = sqrt(2 ln L) * 1.4826*movMAD = 3.90 * scale;  20 records x 4 s per SNR
+SNR = 20 log10(A0 / RMS(added noise))
+=====================================================================
+
+--- SNR = 24 dB  (1266 true events) ---
+Karimi D-TMA + local robust rule   F1=0.724 Se=0.990 PPV=0.571 FP/s= 11.79  offset=+0 us  |err| q50/q95=0/0 us
+Karimi ECG rule unchanged          F1=0.195 Se=0.995 PPV=0.108 FP/s=130.04  dF1(main-this)=+0.529 [+0.499 +0.558]  * main better
+D-TMA + GLOBAL thr (ablation)      F1=0.716 Se=0.991 PPV=0.561 FP/s= 12.30  dF1(main-this)=+0.008 [-0.000 +0.016]
+db4 wavelet d1, universal thr      F1=0.829 Se=0.915 PPV=0.758 FP/s=  4.63  dF1(main-this)=-0.105 [-0.136 -0.072]  * this better
+Cycle difference, universal thr    F1=0.410 Se=0.923 PPV=0.264 FP/s= 40.76  dF1(main-this)=+0.313 [+0.270 +0.357]  * main better
+
+--- SNR = 18 dB  (1234 true events) ---
+Karimi D-TMA + local robust rule   F1=0.705 Se=0.989 PPV=0.548 FP/s= 12.60  offset=+0 us  |err| q50/q95=0/0 us
+Karimi ECG rule unchanged          F1=0.179 Se=0.998 PPV=0.098 FP/s=141.13  dF1(main-this)=+0.526 [+0.514 +0.537]  * main better
+D-TMA + GLOBAL thr (ablation)      F1=0.699 Se=0.989 PPV=0.541 FP/s= 12.96  dF1(main-this)=+0.005 [+0.001 +0.010]  * main better
+db4 wavelet d1, universal thr      F1=0.757 Se=0.800 PPV=0.718 FP/s=  4.84  dF1(main-this)=-0.052 [-0.092 -0.008]  * this better
+Cycle difference, universal thr    F1=0.395 Se=0.834 PPV=0.259 FP/s= 36.76  dF1(main-this)=+0.309 [+0.268 +0.353]  * main better
+
+--- SNR = 12 dB  (1260 true events) ---
+Karimi D-TMA + local robust rule   F1=0.591 Se=0.845 PPV=0.455 FP/s= 15.96  offset=+0 us  |err| q50/q95=0/100 us
+Karimi ECG rule unchanged          F1=0.161 Se=0.962 PPV=0.088 FP/s=157.78  dF1(main-this)=+0.431 [+0.393 +0.467]  * main better
+D-TMA + GLOBAL thr (ablation)      F1=0.580 Se=0.840 PPV=0.443 FP/s= 16.65  dF1(main-this)=+0.012 [+0.004 +0.019]  * main better
+db4 wavelet d1, universal thr      F1=0.534 Se=0.440 PPV=0.679 FP/s=  3.28  dF1(main-this)=+0.058 [-0.047 +0.186]
+Cycle difference, universal thr    F1=0.290 Se=0.488 PPV=0.207 FP/s= 29.54  dF1(main-this)=+0.301 [+0.268 +0.344]  * main better
+
+--- SNR =  6 dB  (1254 true events) ---
+Karimi D-TMA + local robust rule   F1=0.284 Se=0.377 PPV=0.228 FP/s= 20.04  offset=+0 us  |err| q50/q95=0/300 us
+Karimi ECG rule unchanged          F1=0.127 Se=0.802 PPV=0.069 FP/s=170.19  dF1(main-this)=+0.157 [+0.089 +0.238]  * main better
+D-TMA + GLOBAL thr (ablation)      F1=0.277 Se=0.378 PPV=0.218 FP/s= 21.25  dF1(main-this)=+0.008 [-0.001 +0.015]
+db4 wavelet d1, universal thr      F1=0.195 Se=0.140 PPV=0.325 FP/s=  4.54  dF1(main-this)=+0.089 [-0.006 +0.196]
+Cycle difference, universal thr    F1=0.121 Se=0.167 PPV=0.095 FP/s= 25.06  dF1(main-this)=+0.163 [+0.135 +0.198]  * main better
+
+--- SNR =  0 dB  (1263 true events) ---
+Karimi D-TMA + local robust rule   F1=0.218 Se=0.280 PPV=0.178 FP/s= 20.44  offset=+0 us  |err| q50/q95=0/200 us
+Karimi ECG rule unchanged          F1=0.097 Se=0.606 PPV=0.053 FP/s=171.84  dF1(main-this)=+0.121 [+0.017 +0.223]  * main better
+D-TMA + GLOBAL thr (ablation)      F1=0.213 Se=0.285 PPV=0.170 FP/s= 21.99  dF1(main-this)=+0.005 [-0.001 +0.013]
+db4 wavelet d1, universal thr      F1=0.177 Se=0.127 PPV=0.292 FP/s=  4.89  dF1(main-this)=+0.040 [-0.011 +0.109]
+Cycle difference, universal thr    F1=0.117 Se=0.170 PPV=0.089 FP/s= 27.61  dF1(main-this)=+0.101 [+0.043 +0.171]  * main better
+
+Summary (main significantly better, 95% bootstrap CI > 0):
+  vs Karimi ECG rule unchanged         at SNR: [24 18 12 6 0]
+  vs D-TMA + GLOBAL thr (ablation)     at SNR: [18 12]
+  vs db4 wavelet d1, universal thr     at SNR: []
+  vs Cycle difference, universal thr   at SNR: [24 18 12 6 0]
+
+=====================================================================
+EXP A2: REAL grid voltage + REAL noise (with slow level changes 0.4x..2x), fs=10000 Hz
+transient: double-exp tau1=100 us tau2=400 us, amp 0.20 p.u. x U(0.6,1.4), random sign
+W=5 smp (0.50 ms)  w1=17  w2=3  L=2002 (10 cycles)  Tmin=20  tol=+-5 smp (0.50 ms)
+local rule: thr = sqrt(2 ln L) * 1.4826*movMAD = 3.90 * scale;  20 records x 4 s per SNR
+SNR = 20 log10(A0 / RMS(added noise))
+=====================================================================
+
+--- SNR = 24 dB  (1286 true events) ---
+Karimi D-TMA + local robust rule   F1=0.733 Se=0.998 PPV=0.579 FP/s= 11.65  offset=+0 us  |err| q50/q95=0/0 us
+Karimi ECG rule unchanged          F1=0.197 Se=0.999 PPV=0.109 FP/s=131.23  dF1(main-this)=+0.537 [+0.517 +0.557]  * main better
+D-TMA + GLOBAL thr (ablation)      F1=0.722 Se=0.999 PPV=0.565 FP/s= 12.38  dF1(main-this)=+0.012 [+0.005 +0.019]  * main better
+db4 wavelet d1, universal thr      F1=0.840 Se=0.913 PPV=0.779 FP/s=  4.18  dF1(main-this)=-0.107 [-0.126 -0.084]  * this better
+Cycle difference, universal thr    F1=0.448 Se=0.943 PPV=0.293 FP/s= 36.50  dF1(main-this)=+0.286 [+0.258 +0.318]  * main better
+
+--- SNR = 18 dB  (1283 true events) ---
+Karimi D-TMA + local robust rule   F1=0.703 Se=0.969 PPV=0.551 FP/s= 12.64  offset=+0 us  |err| q50/q95=0/0 us
+Karimi ECG rule unchanged          F1=0.181 Se=0.995 PPV=0.100 FP/s=144.01  dF1(main-this)=+0.521 [+0.496 +0.548]  * main better
+D-TMA + GLOBAL thr (ablation)      F1=0.682 Se=0.977 PPV=0.524 FP/s= 14.20  dF1(main-this)=+0.020 [+0.010 +0.031]  * main better
+db4 wavelet d1, universal thr      F1=0.727 Se=0.723 PPV=0.732 FP/s=  4.25  dF1(main-this)=-0.024 [-0.072 +0.031]
+Cycle difference, universal thr    F1=0.405 Se=0.811 PPV=0.270 FP/s= 35.20  dF1(main-this)=+0.298 [+0.273 +0.327]  * main better
+
+--- SNR = 12 dB  (1245 true events) ---
+Karimi D-TMA + local robust rule   F1=0.601 Se=0.844 PPV=0.467 FP/s= 15.01  offset=+0 us  |err| q50/q95=0/100 us
+Karimi ECG rule unchanged          F1=0.160 Se=0.955 PPV=0.087 FP/s=155.38  dF1(main-this)=+0.441 [+0.400 +0.481]  * main better
+D-TMA + GLOBAL thr (ablation)      F1=0.556 Se=0.869 PPV=0.409 FP/s= 19.58  dF1(main-this)=+0.045 [+0.026 +0.064]  * main better
+db4 wavelet d1, universal thr      F1=0.450 Se=0.449 PPV=0.450 FP/s=  8.54  dF1(main-this)=+0.152 [+0.045 +0.263]  * main better
+Cycle difference, universal thr    F1=0.311 Se=0.569 PPV=0.214 FP/s= 32.56  dF1(main-this)=+0.290 [+0.271 +0.315]  * main better
+
+--- SNR =  6 dB  (1266 true events) ---
+Karimi D-TMA + local robust rule   F1=0.435 Se=0.590 PPV=0.344 FP/s= 17.78  offset=+0 us  |err| q50/q95=0/200 us
+Karimi ECG rule unchanged          F1=0.140 Se=0.870 PPV=0.076 FP/s=167.55  dF1(main-this)=+0.295 [+0.222 +0.365]  * main better
+D-TMA + GLOBAL thr (ablation)      F1=0.386 Se=0.596 PPV=0.286 FP/s= 23.59  dF1(main-this)=+0.049 [+0.031 +0.065]  * main better
+db4 wavelet d1, universal thr      F1=0.269 Se=0.237 PPV=0.310 FP/s=  8.35  dF1(main-this)=+0.166 [+0.079 +0.246]  * main better
+Cycle difference, universal thr    F1=0.180 Se=0.290 PPV=0.130 FP/s= 30.58  dF1(main-this)=+0.255 [+0.224 +0.286]  * main better
+
+--- SNR =  0 dB  (1255 true events) ---
+Karimi D-TMA + local robust rule   F1=0.252 Se=0.335 PPV=0.202 FP/s= 20.75  offset=+0 us  |err| q50/q95=0/300 us
+Karimi ECG rule unchanged          F1=0.108 Se=0.681 PPV=0.058 FP/s=172.36  dF1(main-this)=+0.145 [+0.073 +0.218]  * main better
+D-TMA + GLOBAL thr (ablation)      F1=0.207 Se=0.335 PPV=0.149 FP/s= 29.88  dF1(main-this)=+0.046 [+0.030 +0.059]  * main better
+db4 wavelet d1, universal thr      F1=0.075 Se=0.067 PPV=0.084 FP/s= 11.44  dF1(main-this)=+0.178 [+0.114 +0.236]  * main better
+Cycle difference, universal thr    F1=0.070 Se=0.105 PPV=0.052 FP/s= 29.89  dF1(main-this)=+0.183 [+0.118 +0.248]  * main better
+
+Summary (main significantly better, 95% bootstrap CI > 0):
+  vs Karimi ECG rule unchanged         at SNR: [24 18 12 6 0]
+  vs D-TMA + GLOBAL thr (ablation)     at SNR: [24 18 12 6 0]
+  vs db4 wavelet d1, universal thr     at SNR: [12 6 0]
+  vs Cycle difference, universal thr   at SNR: [24 18 12 6 0]
+
+=====================================================================
+EXP B: SYNTHETIC grid (harmonics 3,5,7,11, flicker, f-drift) + non-stationary noise, fs=50 kHz
+transient: double-exp tau1=20 us tau2=150 us, amp 0.20 p.u. x U(0.6,1.4), random sign
+W=10 smp (0.20 ms)  w1=33  w2=3  L=10000 (10 cycles)  Tmin=100  tol=+-25 smp (0.50 ms)
+local rule: thr = sqrt(2 ln L) * 1.4826*movMAD = 4.29 * scale;  20 records x 4 s per SNR
+SNR = 20 log10(A0 / RMS(added noise))
+=====================================================================
+
+--- SNR = 24 dB  (1241 true events) ---
+Karimi D-TMA + local robust rule   F1=0.975 Se=0.999 PPV=0.952 FP/s=  0.79  offset=+20 us  |err| q50/q95=0/20 us
+Karimi ECG rule unchanged          F1=0.111 Se=1.000 PPV=0.059 FP/s=247.78  dF1(main-this)=+0.864 [+0.856 +0.871]  * main better
+D-TMA + GLOBAL thr (ablation)      F1=0.559 Se=1.000 PPV=0.388 FP/s= 24.45  dF1(main-this)=+0.416 [+0.355 +0.474]  * main better
+db4 wavelet d1, universal thr      F1=0.680 Se=0.937 PPV=0.534 FP/s= 12.69  dF1(main-this)=+0.295 [+0.209 +0.374]  * main better
+Cycle difference, universal thr    F1=0.651 Se=0.985 PPV=0.486 FP/s= 16.20  dF1(main-this)=+0.324 [+0.314 +0.335]  * main better
+
+--- SNR = 18 dB  (1275 true events) ---
+Karimi D-TMA + local robust rule   F1=0.945 Se=0.932 PPV=0.959 FP/s=  0.64  offset=+20 us  |err| q50/q95=20/20 us
+Karimi ECG rule unchanged          F1=0.106 Se=0.995 PPV=0.056 FP/s=266.19  dF1(main-this)=+0.839 [+0.829 +0.848]  * main better
+D-TMA + GLOBAL thr (ablation)      F1=0.500 Se=0.980 PPV=0.335 FP/s= 30.94  dF1(main-this)=+0.445 [+0.385 +0.497]  * main better
+db4 wavelet d1, universal thr      F1=0.280 Se=0.337 PPV=0.239 FP/s= 17.11  dF1(main-this)=+0.665 [+0.636 +0.692]  * main better
+Cycle difference, universal thr    F1=0.509 Se=0.802 PPV=0.373 FP/s= 21.46  dF1(main-this)=+0.436 [+0.403 +0.469]  * main better
+
+--- SNR = 12 dB  (1301 true events) ---
+Karimi D-TMA + local robust rule   F1=0.627 Se=0.477 PPV=0.913 FP/s=  0.74  offset=+20 us  |err| q50/q95=20/20 us
+Karimi ECG rule unchanged          F1=0.094 Se=0.867 PPV=0.050 FP/s=269.39  dF1(main-this)=+0.533 [+0.508 +0.559]  * main better
+D-TMA + GLOBAL thr (ablation)      F1=0.306 Se=0.525 PPV=0.216 FP/s= 30.93  dF1(main-this)=+0.321 [+0.276 +0.358]  * main better
+db4 wavelet d1, universal thr      F1=0.031 Se=0.029 PPV=0.033 FP/s= 14.06  dF1(main-this)=+0.596 [+0.569 +0.622]  * main better
+Cycle difference, universal thr    F1=0.189 Se=0.199 PPV=0.179 FP/s= 14.80  dF1(main-this)=+0.438 [+0.402 +0.471]  * main better
+
+--- SNR =  6 dB  (1278 true events) ---
+Karimi D-TMA + local robust rule   F1=0.142 Se=0.080 PPV=0.634 FP/s=  0.74  offset=+0 us  |err| q50/q95=20/60 us
+Karimi ECG rule unchanged          F1=0.065 Se=0.611 PPV=0.034 FP/s=274.75  dF1(main-this)=+0.077 [+0.047 +0.106]  * main better
+D-TMA + GLOBAL thr (ablation)      F1=0.064 Se=0.105 PPV=0.046 FP/s= 34.52  dF1(main-this)=+0.078 [+0.049 +0.107]  * main better
+db4 wavelet d1, universal thr      F1=0.019 Se=0.020 PPV=0.018 FP/s= 17.64  dF1(main-this)=+0.123 [+0.090 +0.154]  * main better
+Cycle difference, universal thr    F1=0.034 Se=0.037 PPV=0.032 FP/s= 17.68  dF1(main-this)=+0.107 [+0.082 +0.132]  * main better
+
+--- SNR =  0 dB  (1254 true events) ---
+Karimi D-TMA + local robust rule   F1=0.015 Se=0.008 PPV=0.139 FP/s=  0.78  offset=+10 us  |err| q50/q95=10/176 us
+Karimi ECG rule unchanged          F1=0.039 Se=0.375 PPV=0.021 FP/s=278.89  dF1(main-this)=-0.024 [-0.035 -0.011]  * this better
+D-TMA + GLOBAL thr (ablation)      F1=0.029 Se=0.041 PPV=0.022 FP/s= 28.41  dF1(main-this)=-0.013 [-0.026 +0.003]
+db4 wavelet d1, universal thr      F1=0.018 Se=0.015 PPV=0.021 FP/s= 10.96  dF1(main-this)=-0.003 [-0.012 +0.010]
+Cycle difference, universal thr    F1=0.015 Se=0.013 PPV=0.017 FP/s= 11.62  dF1(main-this)=+0.001 [-0.008 +0.010]
+
+Summary (main significantly better, 95% bootstrap CI > 0):
+  vs Karimi ECG rule unchanged         at SNR: [24 18 12 6]
+  vs D-TMA + GLOBAL thr (ablation)     at SNR: [24 18 12 6]
+  vs db4 wavelet d1, universal thr     at SNR: [24 18 12 6]
+  vs Cycle difference, universal thr   at SNR: [24 18 12 6]
+
+==== PART C: raw real recording (60.0 s), nothing injected ====
+Main detector : 953 detections (15.88 /s)
+ECG rule      : 12628 detections (210.47 /s)
+Strongest main detections (time s, e/s):
+   t =   28.9829   e/s =  64.30
+   t =   55.5146   e/s =  28.93
+   t =   32.2184   e/s =  25.85
+   t =    5.0295   e/s =  22.94
+   t =   32.0556   e/s =  15.85
+   t =   16.6946   e/s =  13.97
+   t =    1.0120   e/s =  13.62
+   t =   22.6955   e/s =  12.21
+
+Total run time: 13.5 s
+==== END ====

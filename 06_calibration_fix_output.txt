@@ -1,0 +1,48 @@
+==== PQ_calibration_fix  (22-Oct-2026 18:56:09) ====
+
+resistive 330 W: 5448 logged noise peaks in 60 s (91 /s)
+  rot 1 (cal  0.2-15.1 s): FA/s on unseen test  [budget 0.3 | 0.1]  count 0.75|0.41  exp 0.89|0.36  pareto 0.63|0.12  par/2 0.22|0.05
+  rot 2 (cal 15.2-30.1 s): FA/s on unseen test  [budget 0.3 | 0.1]  count 0.05|0.02  exp 0.05|0.00  pareto 0.00|0.00  par/2 0.00|0.00
+  rot 3 (cal 30.1-45.0 s): FA/s on unseen test  [budget 0.3 | 0.1]  count 1.40|1.01  exp 1.69|0.94  pareto 1.33|0.41  par/2 0.75|0.19
+  rot 4 (cal 45.0-60.0 s): FA/s on unseen test  [budget 0.3 | 0.1]  count 0.22|0.05  exp 0.17|0.02  pareto 0.07|0.00  par/2 0.00|0.00
+
+induction motor: 5536 logged noise peaks in 60 s (93 /s)
+  rot 1 (cal  0.2-15.2 s): FA/s on unseen test  [budget 0.3 | 0.1]  count 0.26|0.02  exp 0.34|0.02  pareto 0.14|0.00  par/2 0.00|0.00
+  rot 2 (cal 15.2-30.1 s): FA/s on unseen test  [budget 0.3 | 0.1]  count 0.42|0.40  exp 1.09|0.47  pareto 0.85|0.31  par/2 0.40|0.05
+  rot 3 (cal 30.1-45.0 s): FA/s on unseen test  [budget 0.3 | 0.1]  count 0.22|0.10  exp 0.56|0.22  pareto 0.34|0.02  par/2 0.10|0.00
+  rot 4 (cal 45.1-60.0 s): FA/s on unseen test  [budget 0.3 | 0.1]  count 0.24|0.07  exp 0.34|0.10  pareto 0.29|0.00  par/2 0.05|0.00
+
+ceiling fan 50 W: 4939 logged noise peaks in 60 s (83 /s)
+  rot 1 (cal  0.2-15.1 s): FA/s on unseen test  [budget 0.3 | 0.1]  count 0.26|0.05  exp 0.02|0.00  pareto 0.00|0.00  par/2 0.00|0.00
+  rot 2 (cal 15.2-30.1 s): FA/s on unseen test  [budget 0.3 | 0.1]  count 0.71|0.25  exp 0.37|0.07  pareto 0.20|0.00  par/2 0.02|0.00
+  rot 3 (cal 30.1-45.0 s): FA/s on unseen test  [budget 0.3 | 0.1]  count 0.12|0.02  exp 0.12|0.00  pareto 0.00|0.00  par/2 0.00|0.00
+  rot 4 (cal 45.0-60.0 s): FA/s on unseen test  [budget 0.3 | 0.1]  count 0.37|0.27  exp 0.34|0.07  pareto 0.15|0.00  par/2 0.00|0.00
+
+SMPS charger: 5264 logged noise peaks in 60 s (88 /s)
+  rot 1 (cal  0.2-15.1 s): FA/s on unseen test  [budget 0.3 | 0.1]  count 0.59|0.55  exp 0.36|0.10  pareto 0.14|0.07  par/2 0.07|0.02
+  rot 2 (cal 15.2-30.1 s): FA/s on unseen test  [budget 0.3 | 0.1]  count 0.09|0.00  exp 0.05|0.02  pareto 0.02|0.00  par/2 0.02|0.00
+  rot 3 (cal 30.1-45.0 s): FA/s on unseen test  [budget 0.3 | 0.1]  count 0.12|0.05  exp 0.05|0.05  pareto 0.05|0.02  par/2 0.05|0.00
+  rot 4 (cal 45.0-60.0 s): FA/s on unseen test  [budget 0.3 | 0.1]  count 0.79|0.43  exp 0.72|0.26  pareto 0.41|0.07  par/2 0.14|0.07
+
+#####################################################################
+SUMMARY over 16 calibration/test pairs (4 loads x 4 rotations)
+
+Budget 0.30 false alarms/s
+  method   FA/s mean  median   max | pairs > budget  > 2x budget | Se 0.30  0.20  0.15  p.u.
+  count      0.414   0.263   1.401 |       7/16         4/16    | 0.988 0.766 0.455
+  exp        0.447   0.341   1.691 |      10/16         4/16    | 0.979 0.752 0.442
+  pareto     0.289   0.145   1.329 |       5/16         3/16    | 0.934 0.645 0.324
+  par/2      0.114   0.036   0.749 |       2/16         1/16    | 0.847 0.471 0.189
+
+Budget 0.10 false alarms/s
+  method   FA/s mean  median   max | pairs > budget  > 2x budget | Se 0.30  0.20  0.15  p.u.
+  count      0.232   0.085   1.015 |       7/16         7/16    | 0.944 0.651 0.335
+  exp        0.170   0.073   0.942 |       5/16         5/16    | 0.927 0.607 0.276
+  pareto     0.064   0.000   0.411 |       3/16         2/16    | 0.777 0.376 0.131
+  par/2      0.024   0.000   0.193 |       1/16         0/16    | 0.627 0.242 0.067
+
+Note: with a correct calibration, ~half of the pairs can still exceed
+the budget by chance (Poisson). Look at mean and "> 2x budget".
+
+Total run time: 12.8 s
+==== END ====

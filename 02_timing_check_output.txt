@@ -1,0 +1,33 @@
+==== PQ_check_timing ====
+N = 600000   t(1) = 0.000001   t(end) = 59.999900 s
+
+-- 1) sampling interval dt (us) --
+non-increasing steps (dt<=0): 0
+  q0.000  =      85.0 us
+  q0.001  =      87.0 us
+  q0.010  =      93.0 us
+  q0.050  =      97.0 us
+  q0.250  =     100.0 us
+  q0.500  =     100.0 us
+  q0.750  =     100.0 us
+  q0.950  =     100.0 us
+  q0.990  =     105.0 us
+  q0.999  =     146.0 us
+  q1.000  =   17200.0 us
+mean dt = 100.00 us  -> mean fs = 10000.0 Hz
+dt > 2x median: 278  (0.046 %)   dt > 5x median: 44   dt < 0.5x median: 0
+largest gaps: 32.2181 s (17200 us)  57.7563 s (9922 us)  28.9828 s (5266 us)  28.9880 s (5227 us)  55.5145 s (3073 us)
+voltage_V vs adc_voltage linear? corr = 0.843437
+
+-- 2.1) sample index (as step 1), voltage_V --
+N = 600000  f0 = 49.954 Hz  residual noise RMS = 0.08703 p.u. (intrinsic SNR for 0.2 p.u. = 7.2 dB)
+main detector: 952 detections (15.87 /s)
+detections within 3 samples of a gap (dt>2x median): 14 of 952 (1.5 %)
+fraction of all samples within 3 samples of a gap: 0.3 % (chance level)
+strongest 5: [t=28.9985 e/s=64.3 dt_near=96us] [t=55.5193 e/s=28.9 dt_near=112us] [t=32.2372 e/s=25.9 dt_near=99us] [t=5.0327 e/s=22.9 dt_near=96us] [t=32.0588 e/s=15.9 dt_near=97us]
+
+-- 2.2) UNIFORM grid from timestamps --
+N = 599999  f0 = 49.954 Hz  residual noise RMS = 0.03698 p.u. (intrinsic SNR for 0.2 p.u. = 14.7 dB)
+main detector: 936 detections (15.60 /s)
+
+==== END ====

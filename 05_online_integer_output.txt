@@ -1,0 +1,55 @@
+==== PQ_TMA_step4_online  (22-Oct-2026 18:39:47) ====
+
+#####################################################################
+FILE 1: resistive 330 W
+K1=9 K2=2  filter delay D=9 smp (0.90 ms)  merge/emit G=20 smp (2.00 ms)  EMA 2^-11 (205 ms)
+budget FA/s     :    0.30              0.10
+k online/offline:    8.70/7.15         9.35/7.50
+test FA/s on/off:    0.74/0.62         0.38/0.43       (unseen 45 s)
+Se online/offline at equal budget, and online decision latency:
+  A=0.30 p.u. |  FA<=0.30: 0.99/1.00  FA<=0.10: 0.99/1.00  | latency med/q95 = 2.9/2.9 ms
+  A=0.20 p.u. |  FA<=0.30: 0.84/0.86  FA<=0.10: 0.77/0.81  | latency med/q95 = 2.9/2.9 ms
+  A=0.15 p.u. |  FA<=0.30: 0.55/0.58  FA<=0.10: 0.46/0.52  | latency med/q95 = 2.9/2.9 ms
+
+#####################################################################
+FILE 2: induction motor
+budget FA/s     :    0.30              0.10
+k online/offline:    9.10/7.80        10.10/8.25
+test FA/s on/off:    0.26/0.14         0.02/0.02       (unseen 45 s)
+Se online/offline at equal budget, and online decision latency:
+  A=0.30 p.u. |  FA<=0.30: 0.99/0.99  FA<=0.10: 0.98/0.98  | latency med/q95 = 2.9/2.9 ms
+  A=0.20 p.u. |  FA<=0.30: 0.80/0.79  FA<=0.10: 0.71/0.74  | latency med/q95 = 2.9/2.9 ms
+  A=0.15 p.u. |  FA<=0.30: 0.49/0.47  FA<=0.10: 0.35/0.38  | latency med/q95 = 2.9/2.9 ms
+
+#####################################################################
+FILE 3: ceiling fan 50 W
+budget FA/s     :    0.30              0.10
+k online/offline:   10.25/8.25        11.50/9.50
+test FA/s on/off:    0.26/0.24         0.05/0.05       (unseen 45 s)
+Se online/offline at equal budget, and online decision latency:
+  A=0.30 p.u. |  FA<=0.30: 0.98/0.99  FA<=0.10: 0.95/0.96  | latency med/q95 = 2.9/2.9 ms
+  A=0.20 p.u. |  FA<=0.30: 0.73/0.77  FA<=0.10: 0.60/0.62  | latency med/q95 = 2.9/2.9 ms
+  A=0.15 p.u. |  FA<=0.30: 0.39/0.43  FA<=0.10: 0.23/0.23  | latency med/q95 = 2.9/2.9 ms
+
+#####################################################################
+FILE 4: SMPS charger
+budget FA/s     :    0.30              0.10
+k online/offline:    9.30/7.75         9.40/8.95
+test FA/s on/off:    0.59/0.50         0.55/0.21       (unseen 45 s)
+Se online/offline at equal budget, and online decision latency:
+  A=0.30 p.u. |  FA<=0.30: 0.99/1.00  FA<=0.10: 0.99/0.97  | latency med/q95 = 2.9/2.9 ms
+  A=0.20 p.u. |  FA<=0.30: 0.79/0.80  FA<=0.10: 0.78/0.67  | latency med/q95 = 2.9/2.9 ms
+  A=0.15 p.u. |  FA<=0.30: 0.50/0.49  FA<=0.10: 0.49/0.30  | latency med/q95 = 2.9/2.9 ms
+
+#####################################################################
+SUMMARY (all files pooled)
+  A=0.30 p.u. |  FA<=0.30: Se online 0.990  offline 0.995 |  FA<=0.10: Se online 0.976  offline 0.978 |
+  A=0.20 p.u. |  FA<=0.30: Se online 0.790  offline 0.804 |  FA<=0.10: Se online 0.717  offline 0.708 |
+  A=0.15 p.u. |  FA<=0.30: Se online 0.483  offline 0.492 |  FA<=0.10: Se online 0.382  offline 0.355 |
+decision latency (event -> alarm), online: median 2.9 ms, q95 2.9 ms, max 3.2 ms
+largest |internal integer| seen: 270114343  (int32 limit 2147483647 -> OK)
+cost per sample (K1=9, K2=2): 13 add/sub, 2 multiplies (K1^2*q, k*s), 2 shifts, 5 compares
+memory: 30 integers of buffers (2*K1 + 2*K2 + K1-1) + 10 state variables
+
+Total run time: 14.1 s
+==== END ====
